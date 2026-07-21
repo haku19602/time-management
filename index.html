@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學生時間管理法寶</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>⚡ 學生時間管理法寶 ⚡</h1>
+        <p>專注高效學習，解鎖崴崴孟孟獎勵！</p>
+    </header>
+
+    <main class="container">
+        <section class="section-card timer-section">
+            <h2>⏱️ 專注計時器</h2>
+            
+            <div class="timer-settings">
+                <button onclick="setCustomTime(15)">15 分鐘</button>
+                <button onclick="setCustomTime(25)">25 分鐘</button>
+                <button onclick="setCustomTime(50)">50 分鐘</button>
+                <div class="custom-input">
+                    <input type="number" id="customMinutes" min="1" max="180" placeholder="自訂(分)">
+                    <button onclick="setCustomInputTime()">設定</button>
+                </div>
+            </div>
+
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="timer-controls">
+                <button id="startBtn" onclick="startTimer()">開始專注</button>
+                <button id="pauseBtn" onclick="pauseTimer()">暫停</button>
+                <button id="resetBtn" onclick="resetTimer()">重設</button>
+            </div>
+        </section>
+
+        <section class="section-card schedule-section">
+            <h2>📅 今日行程表</h2>
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="新增待辦事項（例如：寫數學作業）..." />
+                <button onclick="addTask()">新增事項</button>
+            </div>
+            <ul id="taskList" class="task-list">
+                </ul>
+        </section>
+    </main>
+
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeRewardModal()">&times;</span>
+            <h2>🎉 專注完成！專屬獎勵來囉！ 🎉</h2>
+            <p>欣賞崴崴孟孟的《崴孟三百天禮物》 MV 休息一下吧！</p>
+            <div class="video-container">
+                <iframe 
+                    id="rewardVideo"
+                    src="" 
+                    title="崴崴孟孟獎勵影片" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>💪 堅持下去，芭比粉與螢光黃與你同在！</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
